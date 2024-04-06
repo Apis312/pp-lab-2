@@ -1,6 +1,7 @@
 import java.util.Scanner;
+import java.util.stream.DoubleStream;
 import java.util.Arrays;
-public class zad4 {
+public class zad5 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -31,6 +32,22 @@ public class zad4 {
 			System.out.println(tablica[i] + "   obecna suma to " + sm + "  obecna srednia to " + sr);
 			
 		}
+		
+		
+		DoubleStream posortowana = Arrays.stream(tablica).sorted();
+		int wielkoscTab = tablica.length;
+		System.out.println("rozmiar tablicy to " + wielkoscTab);
+		
+		double mediana = 0;
+		if(wielkoscTab % 2 == 0) {
+			System.out.println("wymiar tablicy jest parzysty ");
+			mediana = ((tablica[(wielkoscTab/2) - 1] + tablica[(wielkoscTab/2) ]) / 2 );
+		}else if(wielkoscTab % 2 != 0){
+			System.out.println("wymiar tablicy jest parzysty ");
+			mediana = tablica[wielkoscTab/2];
+		}
+		System.out.println("Mediana to " + mediana);
+		
 		//Obliczanie średniej
 		double suma = Arrays.stream(tablica).sum();
 		double srednia = suma / ilosc;
