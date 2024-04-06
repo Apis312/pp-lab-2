@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
-public class zad3 {
+public class zad4 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -15,7 +15,14 @@ public class zad3 {
 		//Wpisywanie wartości do tablicy
 		for(int i = 0; i < ilosc; i++) {
 			System.out.println("Podaj wartość pod index " + i);
-			tablica[i] = scan.nextDouble();}
+			double wartosc;
+			wartosc = scan.nextDouble();
+			if(wartosc < 0.0 || wartosc > 6.0) {
+				System.out.println("Podana wartosc: " + wartosc+ " jest niepoprawna");
+				i--;
+			}else {
+			tablica[i] = wartosc;}
+		}
 		
 		System.out.println("Podane oceny to: \n");
 		for(int i = 0 ; i < ilosc; i++) {
